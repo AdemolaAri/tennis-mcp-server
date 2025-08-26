@@ -79,7 +79,7 @@ The server exposes several tools that an LLM can use:
 
 5. Test the server:
    
-   In a new terminal, start the visual interface:
+   In a new terminal, start the visual interface and navigate to the localhost route in your browser:
    ```bash
    mcp dev server.py
    ```
@@ -89,32 +89,11 @@ The server exposes several tools that an LLM can use:
    # List available tools
    npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 
-   # Example: Get player stats for Nadal (player_id=1)
-   npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name get_player_stats --tool-arg player_id=1
+   # Example: Get player stats for Nadal (by name)
+   npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name get_player_stats --tool-arg player_name="Rafael Nadal"
 
-   # Example: Get Nadal vs Djokovic head-to-head
-   npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name get_head_to_head --tool-arg player1_id=1 --tool-arg player2_id=2
-   ```
-
-## 🌟 Example Use Cases
-
-1. **AI Tennis Commentator**
-   ```python
-   # LLM can dynamically query player stats during match commentary
-   stats = get_player_stats(player_id=1)
-   surface_stats = get_player_surface_stats(player_id=1)
-   ```
-
-2. **Tournament Analysis**
-   ```python
-   # Generate tournament bracket analysis
-   draw = get_tournament_draw(tournament_id=1)
-   ```
-
-3. **Player Matchup Analysis**
-   ```python
-   # Analyze head-to-head history
-   h2h = get_head_to_head(player1_id=1, player2_id=2)
+   # Example: Get Nadal vs Djokovic head-to-head (by names)
+   npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name get_head_to_head --tool-arg player1_name="Rafael Nadal" --tool-arg player2_name="Novak Djokovic"
    ```
 
 ## 📝 License
