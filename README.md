@@ -101,20 +101,20 @@ The server exposes several tools that an LLM can use:
 1. **AI Tennis Commentator**
    ```python
    # LLM can dynamically query player stats during match commentary
-   stats = get_player_stats(conn, player_id=1)
-   surface_stats = get_player_surface_stats(conn, player_id=1)
+   stats = get_player_stats(player_id=1)
+   surface_stats = get_player_surface_stats(player_id=1)
    ```
 
 2. **Tournament Analysis**
    ```python
    # Generate tournament bracket analysis
-   draw = get_tournament_draw(conn, tournament_id=1)
+   draw = get_tournament_draw(tournament_id=1)
    ```
 
 3. **Player Matchup Analysis**
    ```python
    # Analyze head-to-head history
-   h2h = get_head_to_head(conn, player1_id=1, player2_id=2)
+   h2h = get_head_to_head(player1_id=1, player2_id=2)
    ```
 
 ## 📝 License
