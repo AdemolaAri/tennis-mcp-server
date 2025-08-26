@@ -1,0 +1,4 @@
+.venv/
+sample.db
+__pycache__/
+tennis.db
